@@ -26,7 +26,7 @@ public class Account {
     }
 
     public void setState(String state) {
-        String oldState= this.getState();
+        String oldState = this.getState();
         this.commands.push(()->{this.state=oldState;});
         this.state = state;
     }
@@ -51,9 +51,9 @@ public class Account {
 
     private Deque<Command> commands = new ArrayDeque<>();
 
-    private Account(){};
+    private Account(){}
 
-    public Account undo() throws NothingToUndo {
+    public  Account undo() throws NothingToUndo {
         if (commands.isEmpty()) throw new NothingToUndo();
         commands.pop().perform();
         return this;
