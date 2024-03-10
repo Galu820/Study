@@ -1,6 +1,6 @@
 package org.example;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class AccountTest {
@@ -16,7 +16,6 @@ class AccountTest {
         String oldName = a.getName();
         a.setName("Noname Account");
         a.undo();
-        Assert.assertEquals(oldName,
-                a.getName());
+        Assertions.assertEquals(oldName, a.getName());
     }
 }
